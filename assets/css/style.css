@@ -1,0 +1,185 @@
+/* Nguyến tắc bài trong CSS
+    1) Xem xét từ ngoài vào trong
+    2) Xem xét từ trên xuống dưới
+    3) Tổng quan đến chi tiết */
+/* Reset CSS */
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Đặt vài câu hỏi để diễn tả trang web
+    1) Vị trí của thẻ ở đâu (ví dụ id=header thì nó nằm ở vị trí đầu trang bên trong id=main)
+    2) Kích thước (width,height)
+    3) Màu sắc
+    4) Kiểu dáng (Kiểu chữ, Kiểu hình: tròn,vuông,..) */
+#main{
+
+}
+#header{
+    height:46px;
+    background-color: #000;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1;  /*Trục độ sâu (cao hay thấp), nổi lên trên hay chìm xuống*/
+}
+#nav
+{
+    display: inline-block;
+}
+#nav, .subnav{
+    list-style-type: none;  /* Kieu cua danh sach (vi du danh dau thu tu la 1 2 3 or bang dau cham*/
+}
+#nav .subnav li, #nav .subnav a {
+    display: block;
+}
+#nav li{ 
+    position: relative;
+    display: inline-block;
+}
+#nav > li > a{
+    color:#fff;
+    text-transform: uppercase; /*Viet in hoa*/
+}
+
+#nav li a{
+    text-decoration: none;
+    line-height: 46px;
+    padding:0 24px;
+    display: inline-block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a
+{     /*khi hover vào thẻ li con của thằng nav thì con của thẻ li được hover là thẻ a */
+    color: black;
+    background-color: #ccc;
+}
+#nav .subnav{
+    display: none; /* ẩn đi */
+    min-width: 160px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /*Bóng đổ*/
+}
+#nav li:hover .subnav{
+    display: block;
+}
+#nav .subnav a{
+    color:#000;
+    padding: 0 14px;
+    line-height: 38px;
+}
+#nav .nav-arrow{
+    font-size: 10px;
+}
+#header .search-btn{
+    float:right;
+    padding: 0 21px;
+
+}
+#header .search-icon{
+    color: #fff;
+    font-size: 16px;
+    line-height: 46px;
+}
+#header .search-btn:hover
+{
+    background-color: #f44336;
+    cursor: pointer; /*TThuộc tính cursor để thay đổi hình dạng của trỏ chuột*/
+
+}
+
+
+#slider{
+    position: relative;
+    margin-top:46px;
+    padding-top:50%; /* % là tỷ lệ kích thước theo chiều ngang của chính nó*/
+    background: url('/assets/img/slider/slider1.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content
+{   
+    position: absolute;
+    bottom:48px;
+    /* left:50%;
+    transform: translateX(-50%); */
+    left:0;
+    right:0;
+    color:white;
+    text-align: center;
+}
+#slider .text-heading
+{
+    font-weight: 500;
+    font-size: 24px;
+}
+#slider .text-description
+{
+    margin-top: 25px;
+}
+
+#content{
+    height: 1000px;
+    background: white;
+
+}
+#content .content-section
+{
+    width:800px;
+    padding: 64px 0;
+    margin-left:auto;
+    margin-right: auto;   
+}
+#content .section-heading,
+#content .section-sub-heading{
+    text-align:center;
+}
+#content .section-heading{
+    font-size:30px;
+    font-weight: 500;
+    letter-spacing:4px; /*Khoang cách giữa các chữ cái trong 1 text*/
+}
+#content .section-sub-heading{
+    margin-top:25px;
+    text-align: center;
+    font-style: italic;
+    opacity: 0.6; /*Làm mờ dần đi độ trong suốt*/
+}
+#content .about-text{
+    margin-top:25px;
+    text-align: justify; /*Căn đều 2 bên*/
+    line-height: 1.4 ;  /*Chỉnh độ cao của một dòng*/
+}
+#content .section-sub-heading, 
+#content .about-text{
+    font-size:15px;
+}
+#content .member-list{
+    margin-top:48px;
+
+}
+#content .member-item{
+    float:left;
+    text-align: center;
+}
+#content .member-name{
+    font-size: 15px;
+
+}
+#content .member-img{
+    margin-top:15px;
+    /* width: 154px; */
+    border-radius:4px;
+
+}
+
+#footer{
+
+}
