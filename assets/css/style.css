@@ -20,6 +20,9 @@ html{
 #main{
 
 }
+.text-white{
+    color:white !important; /*important se duoc uu tien nhat, cho nen nhung the co class text-white thi se duojc uu tien hon. Neu text co mau khac ko phai trang thi no se uu tien mau trang*/
+}
 #header{
     height:46px;
     background-color: #000;
@@ -163,22 +166,103 @@ html{
 }
 #content .member-list{
     margin-top:48px;
+    overflow: hidden; /*Dùng để phủ thằng float, vì float là mặt phẳng khác dù nó nằm trong thẻ cha, nên nó làm cho thẻ cha bị co lại. Không phủ hết được con của nó */
 
 }
 #content .member-item{
     float:left;
+    width:calc(100%/3);
     text-align: center;
 }
 #content .member-name{
     font-size: 15px;
-
 }
 #content .member-img{
     margin-top:15px;
-    /* width: 154px; */
-    border-radius:4px;
-
+    width: 154px;
+    border-radius:5px;
 }
+/*Tour-section*/
+.tour-section{
+    background: #000;
+}
+.ticket-list{
+    background-color: white;
+    margin-top:40px;
+    list-style:none;
+}
+.ticket-list li{
+    font-size:15px;
+    padding:12px 16px;
+    border-bottom: 1px solid #ddd;
+    color: #757575;
+}
+.ticket-list .sold-out{
+    background-color: #f44336;
+    color:#fff;
+    padding:4px 4px;
+    margin-left: 16px;
+}
+.ticket-list .quantity{
+    float:right;  /*float có sẵn thuộc tính là block -> khi sử dụng float thì sẽ có thuộc tính block*/
+    width:24px;
+    height:24px;
+    background-color: #000;
+    color:white;
+    border-radius:50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top:-3px; /*Có thuộc tính float thì mới dùng - được*/
+}
+/* Place section */
+.place-list{
+    margin-top:32px;
+    overflow:hidden;
+    margin: 32px -8px 0;
+    padding-bottom:48px;
+}
+.place-item{
+    float:left;
+    width:33.33333%;
+    padding:0 8px;
+}
+.place-img{
+    width:100%; /*CHo width=100% thì ảnh sẽ nằm trong khoảng của thẻ chưứa nó là place-item --> Không làm ảnh vượt quá khoải thẻ chứa nó*/
+    display: block;
+}
+.place-img:hover{
+    opacity: 0.6;
+}
+.place-content{
+    padding:16px;
+    background-color: #fff;
+    font-size:15px;
+}
+.place-heading{
+    font-size: 15px;
+    font-weight: 600;
+}
+.place-time{
+    margin-top:15px;
+    color: #757575;
+}
+.place-dsc{
+    margin-top:15px;
+    line-height:1.4;
+}
+.place-buy-btn{
+    color:#fff;
+    background: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top:15px;
+}
+.place-buy-btn:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
 
 #footer{
 
