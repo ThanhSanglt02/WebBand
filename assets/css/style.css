@@ -96,7 +96,6 @@ html{
 {
     background-color: #f44336;
     cursor: pointer; /*TThuộc tính cursor để thay đổi hình dạng của trỏ chuột*/
-
 }
 
 
@@ -104,7 +103,7 @@ html{
     position: relative;
     margin-top:46px;
     padding-top:50%; /* % là tỷ lệ kích thước theo chiều ngang của chính nó*/
-    background: url('/assets/img/slider/slider1.jpg') top center /cover no-repeat;
+    background: url('/assets/img/slider/slider2.jpg') top center /cover no-repeat;
 }
 
 #slider .text-content
