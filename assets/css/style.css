@@ -102,10 +102,13 @@ html{
 #slider{
     position: relative;
     margin-top:46px;
-    padding-top:50%; /* % là tỷ lệ kích thước theo chiều ngang của chính nó*/
+    padding-top:50%; /*% là tỷ lệ kích thước theo chiều ngang của chính nó*/
     background: url('/assets/img/slider/slider2.jpg') top center /cover no-repeat;
 }
-
+/* .slider-img{
+    position: absolute;
+    top:0;
+} */
 #slider .text-content
 {   
     position: absolute;
@@ -114,7 +117,7 @@ html{
     transform: translateX(-50%); */
     left:0;
     right:0;
-    color:white;
+    color:#fff;
     text-align: center;
 }
 #slider .text-heading
