@@ -8,20 +8,71 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+/*Dung chung (Common)*/
 html{
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;  /*Hành động cuộn, khi kích vào một đường link nào đó trong trang thì nó sẽ có chuyển động cuộn xuống trong trang web*/
 }
+.clear{
+    clear:both;
+}
+.text-white{
+    color:white !important; /*important se duoc uu tien nhat, cho nen nhung the co class text-white thi se duojc uu tien hon. Neu text co mau khac ko phai trang thi no se uu tien mau trang*/
+}
+.pull-right{
+    float:right !important;
+}
+.btn{
+    color:#fff;
+    background: #000;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top:15px;
+    border:none;
+}
+.btn:hover{
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+/* Sử dụng row và col làm cho việc không cần nghĩ tên class */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;;
+}  /*Khi sử dụng row, col thì khoong nên css những thuộc tính trùng với row và col*/
+.row::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+.col{
+    float:left;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.col-full{
+    width: 100%;  /*Có 1 cột*/
+}
+.col-third{
+    width:33.33333%;
+}
+.col-half{
+    width:50%;  /*Có 2 cột*/
+}
+.mt-8{
+    margin-top:8px !important;
+}
+.mt-16{
+    margin-top: 16px !important; 
+}
+
 /* Đặt vài câu hỏi để diễn tả trang web
     1) Vị trí của thẻ ở đâu (ví dụ id=header thì nó nằm ở vị trí đầu trang bên trong id=main)
     2) Kích thước (width,height)
     3) Màu sắc
     4) Kiểu dáng (Kiểu chữ, Kiểu hình: tròn,vuông,..) */
 #main{
-
-}
-.text-white{
-    color:white !important; /*important se duoc uu tien nhat, cho nen nhung the co class text-white thi se duojc uu tien hon. Neu text co mau khac ko phai trang thi no se uu tien mau trang*/
 }
 #header{
     height:46px;
@@ -95,7 +146,7 @@ html{
 #header .search-btn:hover
 {
     background-color: #f44336;
-    cursor: pointer; /*TThuộc tính cursor để thay đổi hình dạng của trỏ chuột*/
+    cursor: pointer; /*Thuộc tính cursor để thay đổi hình dạng của trỏ chuột*/
 }
 
 
@@ -131,14 +182,14 @@ html{
 }
 
 #content{
-    height: 1000px;
+    /* height: 1000px; */
     background: white;
 
 }
 #content .content-section
 {
     width:800px;
-    padding: 64px 0;
+    padding: 64px 0 112px;
     margin-left:auto;
     margin-right: auto;   
 }
@@ -172,8 +223,8 @@ html{
 
 }
 #content .member-item{
-    float:left;
-    width:calc(100%/3);
+    /* float:left;
+    width:calc(100%/3); */
     text-align: center;
 }
 #content .member-name{
@@ -220,14 +271,14 @@ html{
 .place-list{
     margin-top:32px;
     overflow:hidden;
-    margin: 32px -8px 0;
-    padding-bottom:48px;
+    /* margin: 32px -8px 0; */
+    /* padding-bottom:48px; */
 }
-.place-item{
+/* .place-item{
     float:left;
-    width:33.33333%;
+    width:33.33333%;  Dùng cho thẻ chứa 3 ảnh
     padding:0 8px;
-}
+} */
 .place-img{
     width:100%; /*CHo width=100% thì ảnh sẽ nằm trong khoảng của thẻ chưứa nó là place-item --> Không làm ảnh vượt quá khoải thẻ chứa nó*/
     display: block;
@@ -252,24 +303,62 @@ html{
     margin-top:15px;
     line-height:1.4;
 }
-.place-buy-btn{
-    color:#fff;
-    background: #000;
-    text-decoration: none;
-    padding: 11px 16px;
-    display: inline-block;
-    margin-top:15px;
+
+/* Contact-form */
+.contact-content{
+    margin-top: 48px;
 }
-.place-buy-btn:hover{
-    color: #000;
-    background-color: #ccc;
+.contact-info{
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-info i[class*="ti-"]{  /*Thẻ i có class là ti-*/
+    width: 30px;
+    display: inline-block;
+}
+.contact-form{
+    font-size:15px;
+}
+.contact-form-around{
+    overflow: hidden;
+}
+.contact-form .form-control{
+    padding:10px;
+    border:1px solid #ccc;   
+    width:100%;
+    outline: none; /*Sẽ bỏ đi cái màu viền của thẻ input và có giá trị giống border*/
+}
+/*Map-section*/
+.map-section img{
+    width:100%;
 }
 
 
 #footer{
-
+    padding: 64px 16px;
+    text-align: center;
+}
+#footer .socials-list{
+    font-size:24px;
+}
+#footer .socials-list a{
+    color:rgba(0,0,0,0.6);
+    text-decoration: none;
+}
+#footer .copyright a:hover,
+#footer .socials-list a:hover{
+    color:rgba(0,0,0,0.4);
+}
+#footer .copyright{
+    margin-top:15px;
+    color:rgba(0,0,0,0.6);
+}
+#footer .copyright a{
+    color:rgba(0,0,0,0.6);
 }
 
+
+/*Phần dùng js*/
 .modal {
     position: fixed;
     top:0;
