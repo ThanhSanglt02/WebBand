@@ -30,6 +30,7 @@ html{
     display: inline-block;
     margin-top:15px;
     border:none;
+    text-align: center;
 }
 .btn:hover{
     color: #000;
@@ -66,6 +67,9 @@ html{
 .mt-16{
     margin-top: 16px !important; 
 }
+.mt-32{
+    margin-top: 32px !important;
+}
 
 /* Đặt vài câu hỏi để diễn tả trang web
     1) Vị trí của thẻ ở đâu (ví dụ id=header thì nó nằm ở vị trí đầu trang bên trong id=main)
@@ -73,6 +77,7 @@ html{
     3) Màu sắc
     4) Kiểu dáng (Kiểu chữ, Kiểu hình: tròn,vuông,..) */
 #main{
+    overflow: hidden; /*Là những thứ nằm ngoài thẻ cha (out ra rìa của thẻ cha) thì sẽ bị ẩn đi  --> Khongo tối ưu, cho nên hạn chế sử dụng*/
 }
 #header{
     height:46px;
@@ -82,6 +87,7 @@ html{
     left:0;
     right:0;
     z-index:1;  /*Trục độ sâu (cao hay thấp), nổi lên trên hay chìm xuống*/
+    /* overflow: hidden; */
 }
 #nav
 {
@@ -106,7 +112,7 @@ html{
     text-decoration: none;
     line-height: 46px;
     padding:0 24px;
-    display: inline-block;
+    display: inline-block;  /* bao quanh padding */
 }
 
 #nav > li:hover > a,
@@ -119,6 +125,8 @@ html{
     display: none; /* ẩn đi */
     min-width: 160px;
     position: absolute;
+    top:100%;  /*Cách để không cần đo khoang cách giữa cha và con*/
+    left:0;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /*Bóng đổ*/
 }
@@ -128,19 +136,15 @@ html{
 #nav .subnav a{
     color:#000;
     padding: 0 14px;
-    line-height: 38px;
+    line-height: 38px;   /*114/3=38 mỗi ô. line-height dùng cho khoảng cách giữa chữ với các element mà không bị dịch chuyển */  
 }
 #nav .nav-arrow{
     font-size: 10px;
 }
-#header .search-btn{
-    float:right;
-    padding: 0 21px;
-
-}
+#header .menu-icon,
 #header .search-icon{
     color: #fff;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 46px;
 }
 #header .search-btn:hover
@@ -148,12 +152,30 @@ html{
     background-color: #f44336;
     cursor: pointer; /*Thuộc tính cursor để thay đổi hình dạng của trỏ chuột*/
 }
+#header .mobile-menu-btn{
+    position: absolute;
+    top:0;
+    right:0;
+    display: none;
+}
+#header .mobile-menu-btn,
+#header .search-btn{
+    float:right;
+    padding: 0 21px;
+}
+.mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+.mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
 
 
 #slider{
     position: relative;
     margin-top:46px;
-    padding-top:50%; /*% là tỷ lệ kích thước theo chiều ngang của chính nó*/
+    padding-top:50%; /*% là tỷ lệ kích thước theo chiều ngang của chính nó (là chiều ngang của thẻ cha, thẻ chứa nó)*/
     background: url('/assets/img/slider/slider2.jpg') top center /cover no-repeat;
 }
 /* .slider-img{
@@ -188,10 +210,13 @@ html{
 }
 #content .content-section
 {
-    width:800px;
+    width:800px;  /*Trong màn hình lớn hơn 800px thì content-section sẽ ăn theo 800px*/
+    max-width: 100%;  /*nó mạnh hơn width, khi màn hình hiện tai nhỏ hơn 800px thì width 800px sẽ không thỏa mãn và nó sẽ kéo chiều rộng xuống = 100% với màn hình hiện tại*/
     padding: 64px 0 112px;
     margin-left:auto;
-    margin-right: auto;   
+    margin-right: auto;  
+    padding-left:16px;
+    padding-right:16px; 
 }
 #content .section-heading,
 #content .section-sub-heading{
@@ -218,7 +243,7 @@ html{
     font-size:15px;
 }
 #content .member-list{
-    margin-top:48px;
+    margin-top:32px;
     overflow: hidden; /*Dùng để phủ thằng float, vì float là mặt phẳng khác dù nó nằm trong thẻ cha, nên nó làm cho thẻ cha bị co lại. Không phủ hết được con của nó */
 
 }
@@ -269,7 +294,7 @@ html{
 }
 /* Place section */
 .place-list{
-    margin-top:32px;
+    margin-top:16px;
     overflow:hidden;
     /* margin: 32px -8px 0; */
     /* padding-bottom:48px; */
